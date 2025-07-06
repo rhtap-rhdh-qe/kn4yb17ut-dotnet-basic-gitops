@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  tssc/gitops: kn4yb17ut-dotnet-basic 
+  janus-idp.io/tekton: kn4yb17ut-dotnet-basic
+  backstage.io/kubernetes-id: kn4yb17ut-dotnet-basic
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: kn4yb17ut-dotnet-basic
+resources:
+  - ci-tekton.yaml
+  - application-dev.yaml
+  - application-stage.yaml
+  - application-prod.yaml
